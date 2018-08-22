@@ -4,3 +4,16 @@ These files can be deploied into a docker container and will establish a website
 
 catalogue
 ---------
+1,Train the CNN model from mnist<br>
+2,Run the cassandra to get access to database<br>
+3,Build the docker image<br>
+4,Deploy the image into a container<br>
+5,Open the browser and go to http:/localhost:4000/upload<br>
+6,upload the image and get response of the result<br>
+7,Go to cassadra to check the upload log<br>
+
+configuration required:
+---------
+1,Docker to build image and run container.<br>
+2,Cassandra to provide database to store log.<br>
+
