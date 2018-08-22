@@ -19,5 +19,7 @@ These files can be deploied into a docker container and will establish a website
 
 ### CNN model from mnist datasetu
 The websit uses CNN algroithm to recongize images, so there must be a trained model. There is a trained model in *./form*, and if you want to train your own model, execute <br>
+* FILE:./model.py <br>
 `python model.py`<br>
+
 to create your own model. In `saver.save(sess,"./form/model.ckpt")` you can change your path to store your model annd go to `for i in range(5000):` to change times of training.
