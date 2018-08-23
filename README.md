@@ -17,8 +17,8 @@ These files can be deploied into a docker container and will establish a website
 1,*Docker* to build image and run container.<br>
 2,*Cassandra* to provide database to store log.<br>
 
-### CNN model from mnist datasetu
-The websit uses CNN algroithm to recongize images, so there must be a trained model. There is a trained model in *./form*, and if you want to train your own model, execute <br>
+### CNN model from mnist dataset
+The website uses CNN algroithm to recongize images, so there must be a trained model. There is a trained model in *./form*, and if you want to train your own model, execute <br>
 * FILE: ./model.py <br>
 `python model.py`<br>
 
@@ -86,7 +86,7 @@ to get into the keyspace. Then execute<br>
 `select * from cnntable;`<br>
 to get all the uplaod log data of the website.
 
-#### Troublrshoot
+#### Troubleshoot
 * Remember to type `;` at the end of the command to tell the sqlsh that you have finished your command.
 
 
