@@ -28,6 +28,8 @@ If you just want to recongnize your local image, just drag your file into the cu
 * FILE: ./show.py xxx.png/jpg/jpeg<br>
 `python show.py xxx.png/jpg/jpeg`<br>
 
+to get the result. You can use image of any size and color, but only jpg,png,jpeg form are accepted. If you have created your own model, go to `saver=tf.train.import_meta_graph('./form/model.ckpt.meta')` and `
+saver.restore(sess, tf.train.latest_checkpoint('./form'))` and change the path into yous. 
 
 
 
