@@ -55,7 +55,7 @@ to cqlsh, in which you can create the keyspace and table, then you can insert yo
 
 to create a keyspace named `spaceforcnn` and a table named `cnntable` then insert a row into the table. `xxx.png/jpg/jpeg` and `'0'` are two parameters needed by the python file, the first parameter must be a image file and the second must be a string.
 
-#### Troubleshooting
+#### Troubleshoot
 * If you cannot communicate with cassandra, execute <br>
 `docker inspect -f '{{.NetworkSetting.IPAdress }}' yourname-cassandra`<br>
 to get the IP of cassandra container. If it's not `172.17.0.2`, go to `cluster = Cluster(contact_points=['172.17.0.2'],port=9042)` and change the `contact_points` to correct IP.
@@ -78,6 +78,17 @@ to check the image that you last upload.
 * Or you can execute<br>
 `curl -F "file=@pathofyourimage" http://localhost:4000/upload`<br>
 to get the same result.
+
+### check the upload log
+Now go to terminal of sqlsh, execute<br>
+`use spaceforcnn;`<br>
+to get into the keyspace. Then execute<br>
+`select * from cnntable;`<br>
+to get all the uplaod log data of the website.
+
+#### Troublrshoot
+* Remember to type `;` at the end of the command to tell the sqlsh that you have finished your command.
+
 
 
 
