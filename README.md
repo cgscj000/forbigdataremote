@@ -8,7 +8,7 @@ These files can be deploied into a docker container and will establish a website
 2,Build the docker image<br>
 3,Run the cassandra to get access to database<br>
 4,Deploy the image into a container<br>
-5,Open the browser and go to http:/localhost:4000/upload<br>
+5,Open the browser and go to http:/localhost:4000<br>
 6,upload the image and get response of the result<br>
 7,Go to cassadra to check the upload log<br>
 
@@ -52,6 +52,13 @@ to start the cassandra service. You can use your ownrun name to replace `yournam
 to cqlsh, in which you can create the keyspace and table, then you can insert your log data. If you want to test the cqlsh only, run<br>
 * FILE: ./communicate_with_cassandra.py<br>
 `python communicate_with_cassandra.py xxx.png/jpg/jpeg '0'`<br>
-to create a keyspace named `spaceforcnn` and a table named `cnntable` then insert a row into the table.
+to create a keyspace named `spaceforcnn` and a table named `cnntable` then insert a row into the table. `xxx.png/jpg/jpeg` and `'0'` are two parameters needed by the python file, the first parameter must be a image file and the second must be a string.
+
+### deploy your image into container
+Now we deploy our image into container and run the image. Execute<br>
+`docker run --name yourname -p 4000:80 --rm -d yourimagename`<br>
+to deploy the image into container and run it. The `yourname` is the position to set your name of container, and `yourimagename` is the tag of your image. `-p 4000:80` means exposing your local port 4000 and connecting to the 80 port of your container.
+
+
 
 
