@@ -5,8 +5,8 @@ These files can be deploied into a docker container and will establish a website
 ## catalogue
 
 1,Train the CNN model from mnist<br>
-2,Run the cassandra to get access to database<br>
-3,Build the docker image<br>
+2,Build the docker image<br>
+3,Run the cassandra to get access to database<br>
 4,Deploy the image into a container<br>
 5,Open the browser and go to http:/localhost:4000/upload<br>
 6,upload the image and get response of the result<br>
@@ -29,7 +29,15 @@ If you just want to recongnize your local image, just drag your file into the cu
 `python show.py xxx.png/jpg/jpeg`<br>
 
 to get the result. You can use image of any size and color, but only jpg,png,jpeg form are accepted. If you have created your own model, go to `saver=tf.train.import_meta_graph('./form/model.ckpt.meta')` and `
-saver.restore(sess, tf.train.latest_checkpoint('./form'))` and change the path into yous. 
+saver.restore(sess, tf.train.latest_checkpoint('./form'))` and change the path into yours. 
 
+### build docker image from these files
+We will build a docker image from these files, preparing to deploy it into a container. Make sure that you have installed docker. 
+then execute<br>
+`docker build -t name .`<br>
+in current catalogue. The `-t name` means adding a tag to the docker image, so you can type your tag  on the position of `name`.
+
+### run cassandra and connect to database
+We use cassandra to provide a database to store the log data. Make sure that you have installed cassandra. Then execute<br>
 
 
