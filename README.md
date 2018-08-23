@@ -36,6 +36,13 @@ We will build a docker image from these files, preparing to deploy it into a con
 then execute<br>
 `docker build -t name .`<br>
 in current catalogue. The `-t name` means adding a tag to the docker image, so you can type your tag  on the position of `name`.
+Wait for a few minutes, the docker iamge will be created. Use<br>
+`docker image ls`<br>
+to check all the docker image that you have created.<br>
+
+#### Toubleshooting
+* The dot`.`in the first commad is NOT a type mistake, this dot means you create your docker image from the current path. If you miss the dot, the building will fail. <br>
+* In the `Dokcerfile`, the docker will install modules that the image need from `pypi.python.org`. Becasue I am in USA, I can install them successfully, but if you are in China, you minght be affected by the GFW and cannot install them from this source. Then you should change the `pypi.python.org` into some mirror in China, such as `pypi.tuna.tsinghua.edu.cn/simple`.<br>
 
 ### run cassandra and connect to database
 We use cassandra to provide a database to store the log data. Make sure that you have installed cassandra. Then execute<br>
