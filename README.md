@@ -46,5 +46,12 @@ to check all the docker image that you have created.<br>
 
 ### run cassandra and connect to database
 We use cassandra to provide a database to store the log data. Make sure that you have installed cassandra. Then execute<br>
+`docker run --name yourname-cassandra -p 9042:9042 -d cassandra:latest`<br>
+to start the cassandra service. You can use your ownrun name to replace `yourname`. Then execute<br>
+`docker run -it --link yourname-cassandra:cassandra --rm cassandra cqlsh cassandra`<br>
+to cqlsh, in which you can create the keyspace and table, then you can insert your log data. If you want to test the cqlsh only, run<br>
+* FILE: ./communicate_with_cassandra.py<br>
+`python communicate_with_cassandra.py xxx.png/jpg/jpeg '0'`<br>
+to create a keyspace named `spaceforcnn` and a table named `cnntable` then insert a row into the table.
 
 
